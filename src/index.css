@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.card{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(255, 255, 255);
+  box-shadow:4px 4px 4px 4px rgba(0,0,0,0.1);
+}
+
+.img-card{
+  width: 40px;
+}
+.separador-card{
+  width: 90%;
+}
+
+.follow{
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  background-color: transparent;
+  border-color: greenyellow;
+}
+.follow i{
+  color:greenyellow
+}
