@@ -12,6 +12,16 @@
   align-items: center;
 }
 
+.container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
 .contactos{
   display: flex;
   position: relative;
@@ -24,16 +34,6 @@
   position: absolute;
   width: 70%;
   right: 0;
-}
-
-.container{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-  row-gap: 2rem;
 }
 
 .card{
