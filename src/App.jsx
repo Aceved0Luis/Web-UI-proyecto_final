@@ -1,10 +1,20 @@
-import { Card } from './components/card.jsx';
+import { Card as card } from './components/card.jsx';
+import { Suspense } from 'react';
+import { fetchData } from './logic/fetchData';
+
+const apiData = fetchData("https://reqres.in/api/users?page=1");
+
 function App() {
+  const datos = apiData.read();
   return (
     <>
       <h1 className="contactos"><hr />Contact List</h1>
       <div className="container">
-        <Card />
+      <Suspense fallback={<div>Loading...</div>}>
+          {datos.data ?.map((user) => (
+            card(user.id, user.avatar,user.first_name,user.last_name, user.email)
+          ))}
+        </Suspense>
       </div>
     </>
   )
