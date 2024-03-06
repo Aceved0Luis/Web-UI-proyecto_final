@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <Header />
+      <br />
       <h1 className="contactos"><hr />Contact List</h1>
       <div className="container">
       <Suspense fallback={<div>Loading...</div>}>
