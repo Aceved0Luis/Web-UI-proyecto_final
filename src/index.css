@@ -70,3 +70,26 @@
   color:#C1D72F;
   cursor: pointer;
 }
+
+.formulario-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#C1D72F;;
+  width: 40%;
+  padding: 20px;
+  transition: all ease .2s; 
+}
+
+.formulario-section form{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formulario-section input{
+  color: white;
+  width: 100%;
+  padding: 4px;
+}

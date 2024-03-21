@@ -1,6 +1,6 @@
-export function Btn({texto,clase="btn-default"}){
+export function Btn({texto,click,clase="btn-default"}){
     return(
-        <button className={clase}>
+        <button className={clase} onClick={click}>
             {texto}
         </button>
     )
