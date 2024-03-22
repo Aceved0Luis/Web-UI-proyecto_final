@@ -17,26 +17,16 @@
   justify-content:center;
   align-items: center;
   width: 90%;
-  
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap:32px;
 }
 
 .contactos{
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  background-color: white;
-}
-.contactos hr{
-  position: absolute;
-  width: 70%;
-  right: 0;
+  display: absolute;
+  text-align: left;
 }
 
-.container > .card{
+.container .card{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,6 +57,12 @@
 }
 .follow i{
   font-size: 1.5rem;
+  color:#7f7f7d;
+  cursor: pointer;
+}
+
+.follow i .isFavorite{
+  font-size: 1.5rem;
   color:#C1D72F;
   cursor: pointer;
 }
@@ -88,8 +84,14 @@
   gap: 5px;
 }
 
-.formulario-section input{
+.formulario-section input[type="text"],input[type="email"]{
   color: white;
   width: 100%;
   padding: 4px;
+  background-color: #d7e57a;
+}
+
+.formulario-section label{
+  display: flex;
+  justify-content: space-between;
 }

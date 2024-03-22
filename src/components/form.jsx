@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState } from "react"
 export function Form({show}){
     const [firstname, setfirstname] = useState("")
     const [lastname, setlastname] = useState("")
@@ -11,10 +11,12 @@ export function Form({show}){
                 <input type = "text" value = {firstname} onChange = {(e) => setfirstname(e.target.value)} required placeholder = "First Name"/>
                 <input type = "text" value = {lastname} onChange = {(e) => setlastname(e.target.value)}required placeholder = "Last Name"/>
                 <input type = "email" value = {email} onChange = {(e) => setemail(e.target.value)}required placeholder = "Email"/>
-                <br/><label>
+                <br />
+                <label>
                     Enable like favorite
                     <input type = "checkbox" value = {favorite} onChange = {(e) => setfavorite(e.target.checked)} />
-                </label><br/>
+                </label>
+                <br />
                 <button>SAVE</button>
             </form>
         </section>
