@@ -1,7 +1,5 @@
-import { useState } from "react"
-export function Card({id, avatar, nombre, email}){
+export function Card({id, nombre, email, accion, avatar="/img/profile.png"}){
 
-  const [isFavorite, setIsFavorite]=useState(false)
 
   return(
     <article key={id} className='card'>
@@ -9,9 +7,7 @@ export function Card({id, avatar, nombre, email}){
       <h2 className='name-card'>{nombre}</h2>
       <span className='mail-card'>{email}</span>
       <hr className='separador-card' />
-      <button className='follow' onClick={()=> setIsFavorite(!isFavorite)}>
-        <i id="intro" className='bx bxs-heart' style={isFavorite ? ({color:"#C1D72F"}) : ({})}></i>
-      </button>
+      {accion}
   </article>
   )
 }

@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { Btn } from "./btn"
 import './header.css'
-import { useLocation } from 'react-router-dom';
 import { Form } from "./form";
 import { useState } from "react";
 
 export function Header(){
-    let location = useLocation();
+
     const [show,setShow] = useState(false);
 
     return (

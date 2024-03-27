@@ -17,7 +17,7 @@
   justify-content:center;
   align-items: center;
   width: 90%;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap:32px;
 }
 
@@ -31,10 +31,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: auto;
+  width: 220px;
   height: 210px;
   background-color: rgb(255, 255, 255);
   box-shadow:4px 4px 4px 4px rgba(0,0,0,0.1);
+}
+
+.card-contact{
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .img-card{
@@ -58,6 +65,19 @@
 .follow i{
   font-size: 1.5rem;
   color:#7f7f7d;
+  cursor: pointer;
+}
+
+.delete{
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  background-color: transparent;
+  border-color: #57121d;
+}
+.delete i{
+  font-size: 1.5rem;
+  color:#7f162b;
   cursor: pointer;
 }
 
