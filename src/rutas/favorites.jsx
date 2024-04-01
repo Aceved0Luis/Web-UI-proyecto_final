@@ -1,6 +1,8 @@
 export function Favoritos(){
-    return(
-      <>
-      </> 
-    )
+  return(
+    <> 
+      <br />
+      <h1 className="contactos">Favorite List</h1>
+    </> 
+  )
 }

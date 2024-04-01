@@ -6,7 +6,7 @@ await Promise.all([getData("https://reqres.in/api/users?page=1"),(getData("https
   data = (values[0].concat(values[1]))
 })
 
-const initialState = [ data]
+const initialState = data
 
 export const userSlice = createSlice({
   name: 'user',
