@@ -15,17 +15,20 @@ export const userSlice = createSlice({
     add: (state, action) => {
       return [...state,
         {
-          id: state.length + 1,
+          id: action.payload.id,
           first_name: action.payload.first_name,
           last_name: action.payload.last_name,
           email: action.payload.email
         }
       ]
-    }
-  },
+    },
+    del: (state, action) => {
+      return state.filter(user => user.id !== action.payload.id)
+    },
+  }
 })
 
 // Action creators are generated for each case reducer function
-export const { add } = userSlice.actions
+export const { add,del } = userSlice.actions
 
 export default userSlice.reducer

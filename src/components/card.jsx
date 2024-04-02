@@ -1,6 +1,4 @@
 export function Card({nombre, email, accion, clase='img-card', avatar="/img/profile.png"}){
-
-
   return(
     <article className='card'>
       <img className={clase} src={avatar} alt="Image perfil" />

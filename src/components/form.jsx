@@ -1,26 +1,42 @@
 import { useState } from "react"
 import { useDispatch } from 'react-redux'
 import { add } from '../store/userSlice'
+import { useSelector } from 'react-redux';
+import { addfavorite } from "../store/userFavorite";
+
 export function Form({show, set}){
+
+    const user = useSelector((state) => state.userSlice)
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [email, setEmail] = useState("")
     const [favorite, setFavorite] = useState(false)
-    
     const dispatch = useDispatch()
 
     const handlerclick = (e) => {
         e.preventDefault()
+        let id = user.length + 1;
         dispatch(add({
+                id: id,
                 first_name: firstname,
                 last_name: lastname,
                 email: email,
             })
         )
+        if (favorite){
+            dispatch(addfavorite({  
+                id: id,
+                first_name: firstname,
+                last_name: lastname,
+                email: email
+            }))
+            setFavorite(false);
+        }
         set(false)
-        setFirstname("")
-        setLastname("")
-        setEmail("")
+        setFirstname("");
+        setLastname("");
+        setEmail("");
+        id = 0;
     }
 
     return(

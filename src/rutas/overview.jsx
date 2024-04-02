@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { Btn } from '../components/btn.jsx';
 import { useDispatch } from 'react-redux';
 import { addfavorite, delfavorite } from '../store/userFavorite.jsx';
-import { useEffect } from 'react';
 
 export function Overview(){
 
@@ -12,7 +11,6 @@ export function Overview(){
     const dispatch = useDispatch()   
 
     function addfav(user){
-        //cambiar el estilo?
         dispatch(addfavorite({  
             id: user.id,                             
             first_name: user.first_name,
@@ -26,10 +24,6 @@ export function Overview(){
         dispatch(delfavorite({                               
             id: user.id
         }))
-    }
-
-    function changeStyle(user){
-        console.log(userFavorite.find((userN) => userN.id === user.id))
     }
 
     return(

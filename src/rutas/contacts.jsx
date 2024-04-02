@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Btn } from '../components/btn.jsx';
 import { useDispatch } from 'react-redux';
 import { addfavorite } from '../store/userFavorite.jsx';
+import { del } from '../store/userSlice.jsx';
 
 
 export function Contactos(){
@@ -20,6 +21,12 @@ export function Contactos(){
         }))
     }
 
+    function delUser(user){
+        dispatch(del({
+            id: user.id,                              
+        }))
+    }
+
     return(
         <> 
             <br />
@@ -33,7 +40,7 @@ export function Contactos(){
                     accion={<div className='card-contact'>
                     <Btn click={() => addfav(user)} texto={<i className='bx bxs-heart'></i>} 
                     clase={(userFavorite.find((userN) => userN.id === user.id)) ? "isfollow" : "follow"}/>
-                    <Btn texto={<i className='bx bxs-trash-alt'></i>} clase="delete"/>
+                    <Btn click={() => delUser(user)} texto={<i className='bx bxs-trash-alt'></i>} clase="delete"/>
                     </div>}/>
                 )):<div>Loading...</div>}
             </div>
