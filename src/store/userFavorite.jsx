@@ -7,15 +7,20 @@ export const userFavorite = createSlice({
   initialState,
   reducers: {
     addfavorite: (state, action) => {
-      return [...state,
-        {
-            id: state.length + 1,
-            first_name: action.payload.first_name,
-            last_name: action.payload.last_name,
-            email: action.payload.email,
-            avatar: action.payload.avatar
+        if(state.length > 0) {
+            if(state.find(user => user.id === action.payload.id)) {
+                return state.filter(user => user.id !== action.payload.id)
+            }
         }
-      ]
+        return [...state,
+            {
+                id: action.payload.id,
+                first_name: action.payload.first_name,
+                last_name: action.payload.last_name,
+                email: action.payload.email,
+                avatar: action.payload.avatar
+            }
+        ]
     },
     delfavorite: (state, action) => {
         return state.filter(user => user.id !== action.payload.id)

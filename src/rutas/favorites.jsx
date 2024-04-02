@@ -8,26 +8,25 @@ import { delfavorite } from '../store/userFavorite.jsx';
 export function Favoritos(){
 
   const userFavorite = useSelector((state) => state.userFavorite)
-  const dispatch = useDispatch()  
+  const dispatch = useDispatch() 
+  function handlerclick(user){
+    dispatch(delfavorite({                               
+      id: user.id
+    }))
+  } 
 
   return(
     <> 
       <br />
       <h1 className="contactos">Favorite List</h1>
-      <div className="container">
+      <div className="container-fav">
         {userFavorite ? userFavorite.map((user) => (
-        <Card key={user.id} avatar={user.avatar} 
+        <Card clase={"img-card-fav"} key={user.id} avatar={user.avatar} 
             nombre={user.first_name+" "+user.last_name} 
             email={user.email}
             accion={<div className='card-contact'>
-            <Btn click={
-              function handlerclick(){
-                dispatch(delfavorite({                               
-                  id: user.id
-                }))
-              }
-            } texto={"X REMOVE"}/>
-            </div>}/>
+            <Btn click={() => handlerclick(user)} texto={"X REMOVE"} clase={"remove"}/>
+            </div>} />
         )):<div>Loading...</div>}
       </div>
     </> 

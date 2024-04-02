@@ -1,14 +1,14 @@
 import { useState } from "react"
 import { useDispatch } from 'react-redux'
 import { add } from '../store/userSlice'
-export function Form({show}){
+export function Form({show, set}){
     const [firstname, setFirstname] = useState("")
     const [lastname, setLastname] = useState("")
     const [email, setEmail] = useState("")
     const [favorite, setFavorite] = useState(false)
     
     const dispatch = useDispatch()
-    
+
     const handlerclick = (e) => {
         e.preventDefault()
         dispatch(add({
@@ -17,11 +17,10 @@ export function Form({show}){
                 email: email,
             })
         )
+        set(false)
         setFirstname("")
         setLastname("")
         setEmail("")
-        
-        
     }
 
     return(

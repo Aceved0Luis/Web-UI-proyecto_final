@@ -19,6 +19,14 @@
   width: 90%;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap:32px;
+
+}.container-fav{
+  display: grid;
+  justify-content:center;
+  align-items: center;
+  width: 90%;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:32px;
 }
 
 .contactos{
@@ -35,6 +43,16 @@
   height: 210px;
   background-color: rgb(255, 255, 255);
   box-shadow:4px 4px 4px 4px rgba(0,0,0,0.1);
+
+}.container-fav .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 210px;
+  background-color: rgb(255, 255, 255);
+  box-shadow:4px 4px 4px 4px rgba(0,0,0,0.1);
 }
 
 .card-contact{
@@ -43,29 +61,58 @@
   flex-direction: row;
   justify-content: space-between;
 }
-
 .img-card{
   display: flex;
   aspect-ratio: 1/1;
   width: 40%;
   border-radius: 50px;
 }
+
+.img-card-fav{
+  display: flex;
+  aspect-ratio: 1/1;
+  width: 40%;
+  border-radius: 50px;
+  border: 5px solid #C1D72F;
+}
 .separador-card{
   margin-top: 5px;
   width: 90%;
 }
 
-.follow{
+.follow, .isfollow{
   width: 30px;
   height: 30px;
   margin-top: 5px;
-  background-color: transparent;
-  border-color: #C1D72F;
 }
+
+.follow:hover{
+  border:none;
+}
+
 .follow i{
+  width: 100%;
+  height: 100%;
   font-size: 1.5rem;
   color:#7f7f7d;
   cursor: pointer;
+  border:none;
+}
+
+.isfollow i{
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  color:white;
+  background-color: #C1D72F;
+  cursor: pointer;
+  border:none;
+}
+
+.follow i:hover{
+  color: white; 
+  background-color: #C1D72F; 
+  border-radius: 5px;
 }
 
 .delete{
@@ -81,10 +128,22 @@
   cursor: pointer;
 }
 
-.follow i .isFavorite{
-  font-size: 1.5rem;
-  color:#C1D72F;
-  cursor: pointer;
+.remove{
+  width: 90px;
+  height: 30px;
+  margin-top: 5px;
+  background-color: transparent;
+  border-color: #d40729;
+  color:#d40729;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.remove:hover, .delete:hover{
+  background-color: #d4072973;
+  color:white
 }
 
 .formulario-section{

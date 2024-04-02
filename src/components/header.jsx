@@ -7,7 +7,6 @@ import { useState } from "react";
 export function Header(){
 
     const [show,setShow] = useState(false);
-
     return (
         <>
             <header className="header">
@@ -21,7 +20,7 @@ export function Header(){
                     <Btn texto={"+ New"} click={()=> setShow(!show)}/>
                 </div>
             </header>
-            <Form show={show}/>
+            <Form show={show} set={setShow}/>
         </>
     )
        
