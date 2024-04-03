@@ -4,7 +4,7 @@ import { Btn } from '../components/btn.jsx';
 import { useDispatch } from 'react-redux';
 import { addfavorite } from '../store/userFavorite.jsx';
 import { del } from '../store/userSlice.jsx';
-
+import { TituloContainer } from '../components/titulo-container.jsx';
 
 export function Contactos(){
     const user = useSelector((state) => state.userSlice)
@@ -30,7 +30,7 @@ export function Contactos(){
     return(
         <> 
             <br />
-            <h1 className="contactos">Contact List</h1>
+            <TituloContainer title={"Contact List"} />
             <div className="container">
                 {user ? user.map((user) => (
                 <Card clase={(userFavorite.find((userN) => userN.id === user.id)) ? "img-card-fav" : "img-card"}

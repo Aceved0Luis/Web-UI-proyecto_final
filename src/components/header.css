@@ -12,15 +12,16 @@
     flex-direction: row;
     position: absolute;
     right: 40px;
-
+    align-items: center;
 }
-.header img{
+.header i{
     position: absolute;
     left:40px;
+    font-size: 3rem;
+    color:#C1D72F
 }
 .header-nav{
     list-style: none;
-
 }
 .header-nav li{
     float: left;
@@ -34,4 +35,15 @@
 }
 .header-nav li .active{
     color: #C1D72F
+}
+
+.btn-new{
+    height: 25px;
+    padding: 4px;
+    background-color: #C1D72F;
+    border: none;
+}
+
+.btn-new:hover{
+    cursor: pointer;
 }

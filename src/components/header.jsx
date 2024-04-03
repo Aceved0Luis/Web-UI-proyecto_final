@@ -10,14 +10,14 @@ export function Header(){
     return (
         <>
             <header className="header">
-                <img src="/img/globant.png" alt="Logo de Globant"/>
+                <i class='bx bxs-contact'></i>
                 <div className="header-div">
                     <ul className="header-nav">
                         <li><NavLink to="/">Overview</NavLink></li>
                         <li><NavLink to="/contactos">Contacts</NavLink></li>
                         <li><NavLink to="/favoritos">Favorites</NavLink></li>
                     </ul>
-                    <Btn texto={"+ New"} click={()=> setShow(!show)}/>
+                    <Btn clase={"btn-new"} texto={"+ New"} click={()=> setShow(!show)}/>
                 </div>
             </header>
             <Form show={show} set={setShow}/>

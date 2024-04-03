@@ -3,7 +3,7 @@ import { Card } from '../components/card';
 import { Btn } from '../components/btn';
 import { useDispatch } from 'react-redux';
 import { delfavorite } from '../store/userFavorite.jsx';
-
+import { TituloContainer } from '../components/titulo-container.jsx';
 
 export function Favoritos(){
 
@@ -18,7 +18,7 @@ export function Favoritos(){
   return(
     <> 
       <br />
-      <h1 className="contactos">Favorite List</h1>
+      <TituloContainer title={"Favorite List"} />
       <div className="container-fav">
         {userFavorite ? userFavorite.map((user) => (
         <Card clase={"img-card-fav"} key={user.id} avatar={user.avatar} 

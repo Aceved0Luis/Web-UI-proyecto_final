@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Btn } from '../components/btn.jsx';
 import { useDispatch } from 'react-redux';
 import { addfavorite, delfavorite } from '../store/userFavorite.jsx';
+import { TituloContainer } from '../components/titulo-container.jsx';
 
 export function Overview(){
 
@@ -30,9 +31,7 @@ export function Overview(){
         <>
             <br />
             {userFavorite.length > 0 ? <>
-                <div>
-                    <h1>Favorite List</h1><hr />
-                </div>
+                <TituloContainer title={"Favorite List"} />
                 <div className="contactos">
                     <div className="container-fav">
                         {userFavorite ? userFavorite.map((user) => (
@@ -49,7 +48,7 @@ export function Overview(){
                 </div></>:null
             }
             <br />
-            <h1 className="contactos">Contact List</h1>
+            <TituloContainer title={"Contact List"} />
             <div className="container">
                 {user ? user.map((user) => (
                     <Card clase={(userFavorite.find((userN) => userN.id === user.id)) ? "img-card-fav" : "img-card"} 
