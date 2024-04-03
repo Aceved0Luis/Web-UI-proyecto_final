@@ -42,7 +42,7 @@ export function Contactos(){
                     clase={(userFavorite.find((userN) => userN.id === user.id)) ? "isfollow" : "follow"}/>
                     <Btn click={() => delUser(user)} texto={<i className='bx bxs-trash-alt'></i>} clase="delete"/>
                     </div>}/>
-                )):<div>Loading...</div>}
+                )):null}
             </div>
         </>
     )

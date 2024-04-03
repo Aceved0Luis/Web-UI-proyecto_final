@@ -38,10 +38,12 @@
 }
 
 .btn-new{
+    width: 60px;
     height: 25px;
     padding: 4px;
     background-color: #C1D72F;
     border: none;
+    border-radius: 5px;
 }
 
 .btn-new:hover{

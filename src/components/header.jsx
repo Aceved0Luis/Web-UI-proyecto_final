@@ -10,7 +10,7 @@ export function Header(){
     return (
         <>
             <header className="header">
-                <i class='bx bxs-contact'></i>
+                <i className='bx bxs-contact'></i>
                 <div className="header-div">
                     <ul className="header-nav">
                         <li><NavLink to="/">Overview</NavLink></li>

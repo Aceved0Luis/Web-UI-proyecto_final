@@ -27,7 +27,7 @@ export function Favoritos(){
             accion={<div className='card-contact'>
             <Btn click={() => handlerclick(user)} texto={"X REMOVE"} clase={"remove"}/>
             </div>} />
-        )):<div>Loading...</div>}
+        )):null}
       </div>
     </> 
   )
