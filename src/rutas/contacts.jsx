@@ -2,7 +2,7 @@ import { Card } from '../components/card.jsx';
 import { useSelector } from 'react-redux';
 import { Btn } from '../components/btn.jsx';
 import { useDispatch } from 'react-redux';
-import { addfavorite } from '../store/userFavorite.jsx';
+import { addfavorite, delfavorite } from '../store/userFavorite.jsx';
 import { del } from '../store/userSlice.jsx';
 import { TituloContainer } from '../components/titulo-container.jsx';
 
@@ -22,6 +22,11 @@ export function Contactos(){
     }
 
     function delUser(user){
+        if (userFavorite.find((userN) => userN.id === user.id)){
+            dispatch(delfavorite({
+                id: user.id
+            }))
+        }
         dispatch(del({
             id: user.id,                              
         }))
